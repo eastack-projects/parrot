@@ -1,0 +1,13 @@
+{
+    "server": {
+        "port": 8081,
+        "host": "localhost"
+    },
+    "r2dbc": {
+        "username": "root",
+        "password": "helloworld",
+        "host": "localhost"
+    },
+    "kafka": {
+    }
+}

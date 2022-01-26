@@ -1,0 +1,6 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+build:
+  artifacts:
+    - image: parrot-article
+      jib: {}

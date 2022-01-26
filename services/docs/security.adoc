@@ -1,0 +1,21 @@
+= 安全
+
+== SPA Auth
+
+=== 安全先决条件
+
+* 加密通信
+* 不使用URL请求参数的形式交换敏感数据
+* 阻止暴力攻击
+* 保持依赖更新，避免漏洞利用
+* 对服务进行监控
+
+== 认证
+
+两种主要认证机制
+
+* Bearer Token
+* Authentication cookie
+
+Bearer Token 存储在 Local Storage 会被 XSS 攻击
+

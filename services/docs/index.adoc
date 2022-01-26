@@ -1,0 +1,28 @@
+= 🦜 Parrot
+
+== 软件架构与哲学
+
+积极拥抱 Cloud Native。
+
+== 目录结构
+
+== 运行与开发
+
+.获取 Istio Ingress 端口信息
+[source, bash]
+----
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
+export TCP_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="tcp")].nodePort}')
+----
+
+.获取 Istio Ingress 主机信息
+[source, bash]
+----
+export INGRESS_HOST=$(kubectl get po -l istio=ingressgateway -n istio-system -o jsonpath='{.items[0].status.hostIP}')
+----
+
+[source, bash]
+----
+curl -s -I -HHost:httpbin.example.com "http://$INGRESS_HOST:$INGRESS_PORT/status/200"
+----

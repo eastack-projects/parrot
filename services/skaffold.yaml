@@ -1,0 +1,4 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+deploy:
+  kustomize: {}

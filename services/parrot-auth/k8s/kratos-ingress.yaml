@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: kratos-service-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "api.parrot.lan"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: kratos-service
+spec:
+  hosts:
+  - "api.parrot.lan"
+  gateways:
+  - kratos-service-gateway
+  http:
+  - match:
+    - uri: 
+        prefix: /self-service
+    route:
+    - destination:
+        port:
+          number: 4433
+        host: ory-kratos

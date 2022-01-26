@@ -1,0 +1,4 @@
+= Parrot
+
+https://tailwindcss.com/
+https://svelte.dev/

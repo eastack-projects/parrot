@@ -1,0 +1,7 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: parrot-auth-service
+deploy:
+  kustomize:
+    paths: [k8s]

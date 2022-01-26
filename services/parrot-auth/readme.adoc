@@ -1,0 +1,9 @@
+= 认证服务
+
+使用 https://www.ory.sh/hydra[Ory Hydra] 提供 https://oauth.net/2/[Oauth 2.0] 和 https://openid.net/[OIDC] 服务。
+
+User Story
+
+短信验证码登陆
+
+
